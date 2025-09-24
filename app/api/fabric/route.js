@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { isValidSession } from '../../../lib/auth'
 import { runFabricPattern } from '../../../lib/fabric'
+import { runFabricPatternCloud } from '../../../lib/fabric-cloud'
 
 export async function POST(request) {
   try {
@@ -33,7 +34,12 @@ export async function POST(request) {
       )
     }
 
-    const result = await runFabricPattern(pattern, input)
+    // Use cloud execution if not running locally
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL
+    const result = isProduction
+      ? await runFabricPatternCloud(pattern, input)
+      : await runFabricPattern(pattern, input)
+
     return NextResponse.json({ result })
   } catch (error) {
     console.error('Error running fabric pattern:', error)

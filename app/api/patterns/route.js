@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 import { isValidSession } from '../../../lib/auth'
 import { getFabricPatterns } from '../../../lib/fabric'
+import { getFabricPatternsCloud } from '../../../lib/fabric-cloud'
 
 export async function GET() {
   try {
@@ -16,7 +17,12 @@ export async function GET() {
       )
     }
 
-    const patterns = await getFabricPatterns()
+    // Use cloud patterns if not running locally
+    const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL
+    const patterns = isProduction
+      ? await getFabricPatternsCloud()
+      : await getFabricPatterns()
+
     return NextResponse.json({ patterns })
   } catch (error) {
     console.error('Error fetching patterns:', error)
