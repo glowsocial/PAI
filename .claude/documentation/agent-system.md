@@ -1,468 +1,265 @@
-# PAI Agent System
+# GLOW SOCIAL AGENT SYSTEM
 
 ## Overview
 
-The PAI Agent System provides specialized AI agents for different domains and tasks. Each agent has specific capabilities, tools, and expertise to handle complex, multi-step tasks autonomously.
+The Glow Social Agent System uses specialized AI agents for different aspects of running and scaling the business. Each agent has specific expertise relevant to our needs.
 
 ## Available Agents
 
-### 1. General-Purpose Agent
+### 1. Engineer Agent
 
-**Purpose**: Default agent for complex, multi-step tasks and general problem-solving.
-
-**Capabilities**:
-- Research and information gathering
-- Code implementation
-- Multi-step task execution
-- File system operations
-- Web searches
-
-**When to use**:
-- Complex tasks requiring multiple steps
-- Tasks that span multiple domains
-- When you need comprehensive problem-solving
-- General automation tasks
-
-**Example triggers**:
-```
-"Help me solve this complex problem"
-"I need to complete multiple tasks"
-"Can you figure out how to..."
-```
-
-### 2. Researcher Agent
-
-**Purpose**: Specialized in web research, information gathering, and analysis.
+**Purpose**: Fix bugs, implement features, debug database issues.
 
 **Capabilities**:
-- Web searches and crawling
-- Information synthesis
-- Fact-checking and verification
-- Trend analysis
-- Literature reviews
+- Debug Supabase/PostgreSQL issues
+- Fix Next.js/TypeScript problems
+- Optimize performance
+- Implement new features
+- Troubleshoot the sweater-unraveling type disasters
 
 **When to use**:
-- Finding latest information
-- Researching topics in depth
-- Gathering multiple sources
-- Analyzing trends and patterns
+- "Posts aren't showing"
+- "Duplicate content appearing"
+- "Deploy broke something"
+- "Need to add a new feature"
 
-**Example triggers**:
-```
-"Research the latest AI developments"
-"Find information about..."
-"What's the current state of..."
-```
+**Glow Social Context**:
+- Always check database first
+- Remember timezone issues (UTC everything)
+- Test locally before deploying
+- Document fixes with capture-learning
 
-### 3. Engineer Agent
+### 2. Content Strategist Agent (Custom)
 
-**Purpose**: Professional software engineering and development tasks.
+**Purpose**: Generate and optimize content for clients.
 
 **Capabilities**:
-- Code implementation
-- Debugging and troubleshooting
-- Performance optimization
-- Testing and validation
-- Architecture design
-- Best practices implementation
+- Generate 96 hooks for new clients
+- Create monthly content calendars
+- Adapt content to local markets
+- Maintain brand voice consistency
+- Industry-specific content creation
 
 **When to use**:
-- Writing production-ready code
-- Debugging complex issues
-- Optimizing performance
-- Implementing technical solutions
-- Code reviews
+- Onboarding new clients
+- Monthly content generation
+- Improving content performance
+- Industry-specific campaigns
 
-**Example triggers**:
-```
-"Implement this feature"
-"Debug this issue"
-"Optimize this code"
-"Write tests for..."
-```
+**Tools**:
+- All Fabric patterns in `my_patterns/`
+- Client context files
+- Industry templates
+
+### 3. Business Analyst Agent (Custom)
+
+**Purpose**: Analyze business metrics and growth opportunities.
+
+**Capabilities**:
+- Client retention analysis
+- Revenue tracking
+- Industry performance comparison
+- Competitor monitoring
+- Growth opportunity identification
+
+**When to use**:
+- "How's the business doing?"
+- "Which industries perform best?"
+- "What's our churn rate?"
+- "Where should we focus?"
 
 ### 4. Designer Agent
 
-**Purpose**: UI/UX design and visual development.
+**Purpose**: UI/UX improvements and visual testing.
 
 **Capabilities**:
-- User interface design
-- User experience optimization
-- Design system creation
-- Prototyping
-- Visual testing
-- Accessibility improvements
-- Browser automation for testing
+- Test responsive design
+- Improve user experience
+- Visual regression testing
+- Accessibility checks
+- Dashboard design
 
 **When to use**:
-- Creating user interfaces
-- Improving user experience
-- Visual testing and validation
-- Design system development
-- Accessibility audits
+- Testing how content looks
+- Improving client dashboard
+- Checking mobile experience
+- Visual bugs
 
-**Example triggers**:
-```
-"Design a dashboard"
-"Improve the UX of..."
-"Create a design system"
-"Test the visual appearance"
-```
+**Always uses**: Playwright with MCP bridge
 
-### 5. Pentester Agent
+### 5. Writer Agent
 
-**Purpose**: Security testing and vulnerability assessment.
+**Purpose**: Create marketing content and documentation.
 
 **Capabilities**:
-- Vulnerability scanning
-- Security audits
-- Penetration testing
-- Code security review
-- Network analysis
-- Security best practices
+- Blog posts about social media
+- Client communication templates
+- Documentation updates
+- Email campaigns
+- Landing page copy
 
 **When to use**:
-- Security assessments
-- Finding vulnerabilities
-- Testing security measures
-- Code security reviews
-- Compliance checks
+- Marketing content needed
+- Client communications
+- Documentation updates
+- Website copy
 
-**Example triggers**:
-```
-"Test the security of..."
-"Find vulnerabilities in..."
-"Perform a security audit"
-"Check for security issues"
-```
+**Uses**: Glow Social brand voice (no corporate BS)
 
-### 6. Architect Agent
-
-**Purpose**: System architecture and technical specifications.
-
-**Capabilities**:
-- System design
-- Technical documentation
-- PRD creation
-- Feature breakdown
-- Implementation planning
-- Architecture diagrams
-- Technology selection
-
-**When to use**:
-- Planning large projects
-- Creating technical specifications
-- System design decisions
-- Breaking down complex features
-- Documentation creation
-
-**Example triggers**:
-```
-"Design the architecture for..."
-"Create a PRD for..."
-"Plan the implementation of..."
-"Break down this feature"
-```
-
-### 7. Writer Agent
-
-**Purpose**: Content creation and documentation.
-
-**Capabilities**:
-- Technical writing
-- Blog posts and articles
-- Documentation
-- Copy writing
-- Content editing
-- Style consistency
-
-**When to use**:
-- Creating content
-- Writing documentation
-- Blog posts
-- Marketing copy
-- Technical articles
-
-**Example triggers**:
-```
-"Write a blog post about..."
-"Create documentation for..."
-"Draft an article on..."
-```
-
-## Agent Selection
+## Agent Selection for Glow Social
 
 ### Automatic Selection
 
-The UFC system automatically selects agents based on semantic analysis of your request:
-
 ```python
 def select_agent(user_intent):
-    intent_keywords = analyze_intent(user_intent)
-    
-    if "research" in intent_keywords:
-        return "researcher"
-    elif "code" or "debug" in intent_keywords:
+    if "database" or "bug" or "broken" in intent:
         return "engineer"
-    elif "design" or "ui" in intent_keywords:
+    elif "content" or "hooks" or "client" in intent:
+        return "content_strategist"
+    elif "revenue" or "metrics" or "business" in intent:
+        return "business_analyst"
+    elif "design" or "looks" or "visual" in intent:
         return "designer"
-    elif "security" or "vulnerability" in intent_keywords:
-        return "pentester"
-    elif "architecture" or "specification" in intent_keywords:
-        return "architect"
-    elif "write" or "content" in intent_keywords:
+    elif "blog" or "email" or "write" in intent:
         return "writer"
     else:
-        return "general-purpose"
+        return "engineer"  # Default for technical issues
 ```
 
-### Manual Selection
+## Multi-Agent Workflows for Glow Social
 
-You can explicitly request a specific agent:
+### New Client Onboarding
+1. **Business Analyst**: Analyze their market/competitors
+2. **Content Strategist**: Generate 96 hooks
+3. **Writer**: Create welcome email
+4. **Engineer**: Set up in database
 
-```
-"Use the engineer agent to implement this feature"
-"Have the researcher find information about X"
-"Get the pentester to check security"
-```
+### Monthly Content Generation
+1. **Content Strategist**: Generate 12 posts
+2. **Designer**: Verify visual appearance
+3. **Engineer**: Schedule in system
 
-## Agent Configuration
+### Problem Resolution
+1. **Engineer**: Diagnose issue
+2. **Engineer**: Implement fix
+3. **Designer**: Verify UI still works
+4. **Business Analyst**: Check impact on clients
 
-### Agent Context Files
-
-Each agent can have specific context:
+## Agent Context Files
 
 ```
 ${PAI_HOME}/.claude/context/agents/
-├── researcher.md
-├── engineer.md
-├── designer.md
-├── pentester.md
-├── architect.md
-└── writer.md
+├── engineer.md          # Database schemas, common fixes
+├── content_strategist.md # Client voices, industry patterns
+├── business_analyst.md   # KPIs, growth metrics
+├── designer.md          # Brand guidelines, UI patterns
+└── writer.md            # Glow Social voice, templates
 ```
 
-### Custom Agent Instructions
+## Best Practices for Glow Social
 
-Create agent-specific instructions:
-
-```markdown
-# Engineer Agent Context
-
-## Coding Standards
-- Use TypeScript for type safety
-- Follow functional programming principles
-- Write comprehensive tests
-- Document all functions
-
-## Tools Priority
-1. Use existing libraries
-2. Follow project conventions
-3. Optimize for maintainability
+### 1. Problem Solving Priority
+```
+Database issue? → Engineer
+Content quality? → Content Strategist
+Business question? → Business Analyst
+Visual problem? → Designer
+Marketing need? → Writer
 ```
 
-## Multi-Agent Collaboration
+### 2. Always Document
+- Use `capture-learning` after fixes
+- Update agent context files
+- Save successful patterns
 
-### Sequential Agents
+### 3. Test Everything
+- Engineer tests code
+- Designer tests visuals
+- Content Strategist reviews output
+- Business Analyst verifies metrics
 
-Agents can work in sequence:
+## Common Agent Chains
 
+### "Client complaining about content"
 ```
-1. Architect creates specification
-2. Engineer implements solution
-3. Pentester validates security
-4. Writer creates documentation
-```
-
-### Parallel Agents
-
-Launch multiple agents simultaneously:
-
-```bash
-# In your request
-"Run these in parallel:
-- Research latest security threats
-- Engineer the authentication system
-- Design the user interface"
+1. Business Analyst: Check their metrics
+2. Content Strategist: Review their content
+3. Engineer: Verify scheduling works
+4. Designer: Check display issues
 ```
 
-## Agent Tools
+### "Want to improve retention"
+```
+1. Business Analyst: Identify churn patterns
+2. Content Strategist: Improve content quality
+3. Writer: Better onboarding emails
+4. Engineer: Fix any technical issues
+```
 
-Each agent has access to specific tools:
+### "Scaling to new industry"
+```
+1. Business Analyst: Research market
+2. Content Strategist: Create industry patterns
+3. Writer: Industry-specific templates
+4. Engineer: Add to system
+```
 
-### General Tools (All Agents)
-- File operations (Read, Write, Edit)
-- Shell commands (Bash)
-- Web searches
-- Pattern matching (Grep, Glob)
+## Performance Tips
 
-### Specialized Tools
+### Speed vs Quality
+- **Fast**: Writer, Engineer (for fixes)
+- **Medium**: Content Strategist, Designer
+- **Thorough**: Business Analyst, Engineer (for features)
 
-**Researcher**:
-- Advanced web searches
-- Academic databases
-- Trend analysis tools
+### When to Use Multiple Agents
+- Complex problems (sweater unraveling)
+- New client onboarding
+- Major feature additions
+- Business strategy decisions
 
-**Engineer**:
-- Code analysis
-- Testing frameworks
-- Debugging tools
-- Performance profilers
-
-**Designer**:
-- Browser automation
-- Screenshot tools
-- Visual comparison
-- Accessibility checkers
-
-**Pentester**:
-- Security scanners
-- Network tools
-- Vulnerability databases
-- Exploit frameworks
-
-## Best Practices
-
-### 1. Agent Selection
-- Let the system auto-select when unsure
-- Use specific agents for specialized tasks
-- Combine agents for complex projects
-
-### 2. Task Decomposition
-- Break complex tasks into agent-specific parts
-- Use the architect for planning
-- Assign specialized tasks to appropriate agents
-
-### 3. Quality Assurance
-- Use pentester for security validation
-- Use engineer for code quality
-- Use designer for UX validation
-
-### 4. Documentation
-- Always use writer for user-facing content
-- Use architect for technical specifications
-- Use engineer for code documentation
-
-## Agent Performance
-
-### Optimization Tips
-
-1. **Clear Instructions**: Be specific about requirements
-2. **Context Loading**: Provide relevant context files
-3. **Tool Selection**: Let agents choose appropriate tools
-4. **Parallel Execution**: Use multiple agents when possible
-
-### Performance Metrics
-
-| Agent | Speed | Accuracy | Complexity |
-|-------|-------|----------|------------|
-| General | Medium | High | High |
-| Researcher | Slow | Very High | Medium |
-| Engineer | Fast | High | High |
-| Designer | Medium | High | Medium |
-| Pentester | Slow | Very High | High |
-| Architect | Medium | High | Very High |
-| Writer | Fast | High | Low |
+### When One Agent is Enough
+- Simple bug fixes
+- Single content generation
+- Quick visual checks
+- Basic questions
 
 ## Troubleshooting
 
-### Agent Not Selected
+### Wrong Agent Selected?
+```
+"Use the engineer agent to check the database"
+"Have the content strategist generate hooks"
+```
 
+### Agent Can't Complete Task?
+- Break into smaller parts
+- Use multiple agents
+- Provide more context
+- Check tool access
+
+### Need Custom Agent?
+Create new context file:
 ```bash
-# Check intent matching
-grep "AGENT:" ${PAI_HOME}/Library/Logs/ufc.log
-
-# Manually specify agent
-"Please use the engineer agent to..."
+${PAI_HOME}/.claude/context/agents/custom_agent.md
 ```
 
-### Agent Performance Issues
+## Future Enhancements for Glow Social
 
-```bash
-# Enable agent debugging
-export AGENT_DEBUG=true
-
-# Check agent logs
-tail -f ${PAI_HOME}/Library/Logs/agent-*.log
-```
-
-### Agent Errors
-
-Common issues and solutions:
-
-| Issue | Solution |
-|-------|----------|
-| Wrong agent selected | Specify agent explicitly |
-| Agent timeout | Break task into smaller parts |
-| Tool access denied | Check permissions |
-| Context not loaded | Verify context files exist |
-
-## Advanced Features
-
-### Custom Agent Creation
-
-Create your own specialized agent:
-
-```bash
-# 1. Define agent in context
-cat > ${PAI_HOME}/.claude/context/agents/custom.md << EOF
-# Custom Agent
-Specialized for specific domain...
-EOF
-
-# 2. Add to UFC system
-# Edit user-prompt-submit-hook to include custom agent
-
-# 3. Define agent tools
-# Specify which tools the agent can access
-```
-
-### Agent Chaining
-
-Chain agents for complex workflows:
-
-```python
-workflow = [
-    ("architect", "Create system design"),
-    ("engineer", "Implement core features"),
-    ("designer", "Create user interface"),
-    ("pentester", "Security validation"),
-    ("writer", "Create documentation")
-]
-```
-
-### Agent Templates
-
-Create reusable agent configurations:
-
-```yaml
-template: web_project
-agents:
-  - architect: specification
-  - engineer: backend
-  - designer: frontend
-  - pentester: security
-  - writer: documentation
-```
-
-## Future Developments
-
-### Planned Enhancements
-
-1. **Agent Learning**: Agents that improve over time
-2. **Agent Marketplace**: Share custom agents
-3. **Visual Agent Builder**: GUI for agent creation
-4. **Agent Analytics**: Performance tracking
-5. **Agent Collaboration**: Better multi-agent coordination
-
-### Experimental Features
-
-- Self-organizing agent teams
-- Agent skill trees
-- Domain-specific agent training
-- Agent personality customization
+1. **Client Success Agent**: Track satisfaction
+2. **Sales Agent**: Handle inquiries
+3. **Compliance Agent**: Industry regulations
+4. **Local Market Agent**: Geographic optimization
+5. **Automation Agent**: Workflow optimization
 
 ---
 
-*Agent System Version 1.0.0*
-*Part of the PAI Infrastructure*
+*Glow Social Agent System v1.0*
+*Part of the Glow Social PAI Infrastructure*
+```
+
+This focuses on the agents YOU actually need:
+- Engineer (your most used)
+- Content Strategist (core business)
+- Business Analyst (growth)
+- Designer (testing)
+- Writer (marketing)
