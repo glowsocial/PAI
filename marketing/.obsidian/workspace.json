@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "d3e2337318569fb6",
+    "type": "split",
+    "children": [
+      {
+        "id": "bc3e16d177419274",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3f1649086f2e56e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d77bae75a1c04b3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "75f68315d275c404",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fbd28b61d83f24d0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "317b5fa37fc47069",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9c3ba6119e9fa5ca",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6622a726254914a5",
+    "type": "split",
+    "children": [
+      {
+        "id": "c027e0c8fd87db86",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b4f707534569b5cd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "10945ad5a4887a31",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "3f347c4f23ece5e8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2ea2f0a1ac3479a5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ed654db313b22185",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "b3f1649086f2e56e",
+  "lastOpenFiles": [
+    "glow-social-manifesto/manifesto-v2.md",
+    "product_tiers_spec.md",
+    "glow-social-manifesto/manifesto-v1.md",
+    "2026-networking-research.md",
+    "Glow Social one-pager.pdf",
+    "glow-social-print-materials-copy.md",
+    "glow-social-nurture/emails/40-the-year-from-now.md",
+    "glow-social-nurture/emails/39-the-system-not-motivation.md",
+    "glow-social-nurture/emails/38-the-worst-that-happens.md",
+    "glow-social-nurture/emails/37-the-support-local-moment.md",
+    "glow-social-nurture/emails/36-the-phone-eats-first.md",
+    "glow-social-nurture/emails/35-the-slow-build.md",
+    "glow-social-nurture/emails/34-the-question-post.md",
+    "glow-social-nurture/emails/33-the-milestone-moment.md",
+    "glow-social-nurture/emails/32-the-employee-content.md",
+    "glow-social-nurture/emails/31-the-holiday-trap.md",
+    "glow-social-nurture/emails/30-the-expertise-you-forget.md",
+    "glow-social-nurture/emails/29-the-before-after.md",
+    "glow-social-nurture/emails/28-the-perfect-time-myth.md",
+    "glow-social-nurture/emails/27-the-local-advantage.md",
+    "glow-social-nurture/emails/26-the-repost-secret.md",
+    "glow-social-nurture/emails/25-your-regulars-forgot.md",
+    "glow-social-nurture/emails/24-the-comparison-trap.md",
+    "glow-social-nurture/emails/23-what-to-do-with-photos.md",
+    "glow-social-nurture/emails/22-they-already-follow-you.md",
+    "glow-social-nurture/emails/21-the-slow-season-trap.md",
+    "glow-social-nurture/emails/20-the-review-connection.md",
+    "glow-social-hooks-landing-page.html",
+    "glow-social-onboarding/emails",
+    "glow-social-onboarding",
+    "content_cloner.py",
+    "swipe_file/quick_tips",
+    "swipe_file/myth_vs_fact",
+    "swipe_file/community_questions",
+    "swipe_file",
+    "glow-social-homepage/homepage-v2.html"
+  ]
+}

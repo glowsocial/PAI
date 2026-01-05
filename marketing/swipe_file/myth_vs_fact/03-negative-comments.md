@@ -1,0 +1,2 @@
+Myth: Negative comments are always a bad thing.
+Fact: Negative comments can be an opportunity to show off your excellent customer service. Respond publicly and professionally, and then take the conversation offline to resolve the issue. #GlowSocial

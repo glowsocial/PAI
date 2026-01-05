@@ -1,0 +1,1 @@
+Local businesses, want to get more out of your content? Try this: turn your customer FAQs into a series of posts. It works because you're creating valuable content that directly answers your customers' questions. #GlowSocial

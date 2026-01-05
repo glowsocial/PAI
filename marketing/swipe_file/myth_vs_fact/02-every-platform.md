@@ -1,0 +1,2 @@
+Myth: You need to be on every social media platform.
+Fact: It's better to be on one or two platforms and do them well than to be on every platform and do them poorly. Find where your customers are and focus your efforts there. #GlowSocial

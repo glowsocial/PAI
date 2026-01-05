@@ -1,0 +1,2 @@
+Myth: You should only post about your products and services.
+Fact: People get tired of constant sales pitches. Mix it up with helpful tips, behind-the-scenes content, and community questions to keep your audience engaged. #GlowSocial

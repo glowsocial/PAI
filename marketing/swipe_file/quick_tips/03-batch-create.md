@@ -1,0 +1,1 @@
+Local businesses, short on time? Batch create your social media content. Dedicate a few hours each week to write and schedule all your posts for the week. It's a great way to stay consistent even when you're busy. #GlowSocial
