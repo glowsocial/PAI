@@ -1,6 +1,5 @@
 import fs from "fs"
 import path from "path"
-import os from "os"
 
 export interface CustomSkill {
     id: string
@@ -26,7 +25,8 @@ export interface MarketingAsset {
 }
 
 function getSkillsDir(): string {
-    return path.join(os.homedir(), ".claude", "skills")
+    // Use repo-local data folder (works on Vercel)
+    return path.join(process.cwd(), "data", "skills")
 }
 
 export function getCustomSkills(): CustomSkill[] {
@@ -49,7 +49,6 @@ export function getCustomSkills(): CustomSkill[] {
 
         let description = ""
 
-        // Try to get description from SKILL.md or README.md
         if (fs.existsSync(skillMdPath)) {
             const content = fs.readFileSync(skillMdPath, "utf-8")
             const descMatch = content.match(/description:\s*(.+)/i)
@@ -96,7 +95,6 @@ export function getFabricPatterns(): FabricPattern[] {
 }
 
 export function getMarketingAssets(): MarketingAsset[] {
-    // Look in PAI/marketing folder
     const paiRoot = path.resolve(process.cwd(), "..")
     const marketingDir = path.join(paiRoot, "marketing")
 
@@ -106,7 +104,6 @@ export function getMarketingAssets(): MarketingAsset[] {
 
     const assets: MarketingAsset[] = []
 
-    // Glow Social Nurture emails
     const nurtureDir = path.join(marketingDir, "glow-social-nurture", "emails")
     if (fs.existsSync(nurtureDir)) {
         const emails = fs.readdirSync(nurtureDir).filter(f => f.endsWith(".md"))
@@ -119,7 +116,6 @@ export function getMarketingAssets(): MarketingAsset[] {
         })
     }
 
-    // Glow Social Onboarding
     const onboardingDir = path.join(marketingDir, "glow-social-onboarding")
     if (fs.existsSync(onboardingDir)) {
         assets.push({
@@ -130,7 +126,6 @@ export function getMarketingAssets(): MarketingAsset[] {
         })
     }
 
-    // Webinar
     const webinarDir = path.join(marketingDir, "glow-social-webinar")
     if (fs.existsSync(webinarDir)) {
         assets.push({
@@ -141,7 +136,6 @@ export function getMarketingAssets(): MarketingAsset[] {
         })
     }
 
-    // Audits
     const auditsDir = path.join(marketingDir, "audits")
     if (fs.existsSync(auditsDir)) {
         const audits = fs.readdirSync(auditsDir).filter(f => f.endsWith(".md"))
@@ -154,24 +148,12 @@ export function getMarketingAssets(): MarketingAsset[] {
         })
     }
 
-    // Swipe File
     const swipeDir = path.join(marketingDir, "swipe_file")
     if (fs.existsSync(swipeDir)) {
         assets.push({
             category: "Swipe File",
             name: "Content Templates",
             path: swipeDir,
-            type: "document",
-        })
-    }
-
-    // Brand guidelines
-    const brandGuidelinesPath = path.join(marketingDir, "glow-social-brand-guidelines.md")
-    if (fs.existsSync(brandGuidelinesPath)) {
-        assets.push({
-            category: "Brand",
-            name: "Glow Social Brand Guidelines",
-            path: brandGuidelinesPath,
             type: "document",
         })
     }
