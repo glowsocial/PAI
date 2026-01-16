@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Urbanist:wght@600;700&display=swap');
+
+:root {
+  /* Glow Social Brand Colors */
+  --lime: #d7e278;
+  --skyline: #ddecf7;
+  --navy: #192734;
+  --everglow: #9399cc;
+  --paper: #faf8f7;
+  --open-sign: #d2c964;
+
+  /* Semantic mappings */
+  --background: var(--paper);
+  --foreground: var(--navy);
+  --primary: var(--navy);
+  --accent: var(--everglow);
+  --highlight: var(--lime);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Custom utilities */
+.bg-lime {
+  background-color: var(--lime);
+}
+
+.bg-skyline {
+  background-color: var(--skyline);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.bg-everglow {
+  background-color: var(--everglow);
+}
+
+.bg-paper {
+  background-color: var(--paper);
+}
+
+.bg-open-sign {
+  background-color: var(--open-sign);
+}
+
+.text-lime {
+  color: var(--lime);
+}
+
+.text-skyline {
+  color: var(--skyline);
+}
+
+.text-navy {
+  color: var(--navy);
+}
+
+.text-everglow {
+  color: var(--everglow);
+}
+
+.text-paper {
+  color: var(--paper);
+}
+
+.text-open-sign {
+  color: var(--open-sign);
+}
+
+.border-lime {
+  border-color: var(--lime);
+}
+
+.border-skyline {
+  border-color: var(--skyline);
+}
+
+.border-navy {
+  border-color: var(--navy);
+}
+
+.border-everglow {
+  border-color: var(--everglow);
+}
