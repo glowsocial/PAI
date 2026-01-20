@@ -2,7 +2,7 @@ import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
-    const { password } = await request.json()
+    const { password } = await request.json() as { password: string }
 
     // Check against environment variable
     const correctPassword = process.env.PAI_PASSWORD || 'pai2024'
