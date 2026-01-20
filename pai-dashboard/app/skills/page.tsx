@@ -1,57 +1,61 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { getAllPacks } from "@/lib/packs"
+import { getCustomSkills } from "@/lib/skills"
 
 export default function SkillsPage() {
-    const allPacks = getAllPacks()
-    const skills = allPacks.filter(p => p.type === "skill")
+    const skills = getCustomSkills()
 
     return (
-        <div className="p-8">
+        <div className="p-8 max-w-6xl">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Skills</h1>
-                <p className="text-gray-600">
-                    You have {skills.length} skills installed. Each skill provides specialized capabilities.
+                <h1 className="text-3xl text-[#192734] mb-2">MY SKILLS</h1>
+                <p className="text-[#192734]/60">
+                    {skills.length} custom skills from your personal AI system.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {skills.map((skill) => (
-                    <Card key={skill.id} className="hover:shadow-lg transition-shadow">
-                        <CardHeader>
+                    <Card
+                        key={skill.id}
+                        className="hover:shadow-md transition-all border-l-4 border-l-[#9399cc]"
+                    >
+                        <CardHeader className="pb-2">
                             <div className="flex items-center justify-between">
-                                <CardTitle className="text-xl">{skill.name}</CardTitle>
-                                <Badge className="bg-[#9854f1] text-white">skill</Badge>
+                                <CardTitle className="text-lg" style={{ textTransform: 'none', fontFamily: 'Inter' }}>
+                                    {skill.name}
+                                </CardTitle>
+                                {skill.hasWorkflows && (
+                                    <Badge className="bg-[#9399cc] text-white">
+                                        {skill.workflowCount} workflows
+                                    </Badge>
+                                )}
                             </div>
-                            {skill.version !== "unknown" && (
-                                <p className="text-xs text-gray-400">v{skill.version} by {skill.author}</p>
-                            )}
                         </CardHeader>
-                        <CardContent className="space-y-4">
-                            <p className="text-gray-600">{skill.description}</p>
-
-                            {skill.keywords.length > 0 && (
-                                <div>
-                                    <p className="text-sm font-semibold text-gray-700 mb-2">Keywords:</p>
-                                    <div className="flex flex-wrap gap-1">
-                                        {skill.keywords.map((keyword) => (
-                                            <Badge key={keyword} variant="outline" className="text-xs bg-purple-50 border-[#9854f1]/30">
-                                                {keyword}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                        <CardContent>
+                            <p className="text-[#192734]/70 text-sm mb-3">
+                                {skill.description}
+                            </p>
+                            <p className="text-xs text-[#192734]/40">
+                                ID: {skill.id}
+                            </p>
                         </CardContent>
                     </Card>
                 ))}
             </div>
 
             {skills.length === 0 && (
-                <div className="text-center py-12 text-gray-500">
-                    <p>No skills found. Make sure your PAI Packs directory is accessible.</p>
+                <div className="text-center py-12 text-[#192734]/50">
+                    <p>No custom skills found in data/skills/</p>
                 </div>
             )}
+
+            {/* Footer */}
+            <div className="mt-10 p-4 rounded-lg bg-[#192734]/5 border border-[#192734]/10">
+                <p className="text-xs text-[#192734]/60 text-center">
+                    To use a skill, ask PAI: &quot;Use my [skill name] skill to...&quot;
+                </p>
+            </div>
         </div>
     )
 }

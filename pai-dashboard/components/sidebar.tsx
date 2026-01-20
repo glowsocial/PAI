@@ -2,13 +2,14 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Package, Sparkles } from "lucide-react"
+import { Home, Package, Sparkles, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navigation = [
     { name: "What We Can Do", href: "/", icon: Home },
-    { name: "All Packs", href: "/packs", icon: Package },
-    { name: "Skills", href: "/skills", icon: Sparkles },
+    { name: "My Skills", href: "/skills", icon: Sparkles },
+    { name: "Fabric Patterns", href: "/patterns", icon: Layers },
+    { name: "PAI Packs", href: "/packs", icon: Package },
 ]
 
 export function Sidebar() {
@@ -21,7 +22,7 @@ export function Sidebar() {
                     <h1 className="text-xl font-semibold tracking-wide">
                         PAI DASHBOARD
                     </h1>
-                    <p className="text-xs text-[#9399cc] mt-1">Reference Only</p>
+                    <p className="text-xs text-[#9399cc] mt-1">Capability Reference</p>
                 </div>
             </div>
             <nav className="flex-1 space-y-1 px-3 py-6">
@@ -53,7 +54,7 @@ export function Sidebar() {
 
             <div className="border-t border-white/10 p-4">
                 <p className="text-xs text-white/40 text-center">
-                    Read-only capability reference
+                    Read-only reference
                 </p>
             </div>
         </div>
