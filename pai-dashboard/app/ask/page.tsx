@@ -76,8 +76,8 @@ export default function AskPage() {
                   )}
                   <div
                     className={`rounded-lg px-4 py-3 max-w-[80%] ${message.role === "user"
-                        ? "bg-[#2e7de9] text-white"
-                        : "bg-white border border-gray-200"
+                      ? "bg-[#2e7de9] text-white"
+                      : "bg-white border border-gray-200"
                       }`}
                   >
                     <div className="text-sm whitespace-pre-wrap">{message.content}</div>
@@ -110,7 +110,7 @@ export default function AskPage() {
             <input
               type="text"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
               placeholder="Type your message..."
               disabled={isLoading}
               className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2e7de9] focus:border-transparent disabled:bg-gray-100"
