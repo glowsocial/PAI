@@ -13,13 +13,13 @@ But you run a business. You can't spend 3 hours pointing at text bubbles or memo
 
 That's why we built **Glow Social Pro**.
 
-It takes the pressure off. We generate the scripts, the visuals, and the strategy.
+It takes the pressure off. We generate the scripts, the visuals, and handle the posting.
 
-**Upgrade to Pro to unlock:**
+**Upgrade to Unlimited to unlock:**
 
 *   **AI Video Generation:** Faceless videos that stop the scroll (no dancing required).
 *   **Deep-Dive Carousels:** Educational slides that establish you as the local expert.
-*   **Custom Strategy:** More control over what you post and when.
+*   **Easy Pick & Post:** More content options to choose from every day.
 
 You're doing great with the basics. Now let's pour some fuel on the fire.
 

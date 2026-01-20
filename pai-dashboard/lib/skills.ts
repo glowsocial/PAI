@@ -52,11 +52,12 @@ export function getCustomSkills(): CustomSkill[] {
         if (fs.existsSync(skillMdPath)) {
             const content = fs.readFileSync(skillMdPath, "utf-8")
             const descMatch = content.match(/description:\s*(.+)/i)
-            if (descMatch) description = descMatch[1].trim()
+            if (descMatch?.[1]) description = descMatch[1].trim()
         } else if (fs.existsSync(readmePath)) {
             const content = fs.readFileSync(readmePath, "utf-8")
             const lines = content.split("\n").filter(l => l.trim() && !l.startsWith("#"))
-            if (lines[0]) description = lines[0].slice(0, 150)
+            const firstLine = lines[0]
+            if (firstLine) description = firstLine.slice(0, 150)
         }
 
         let workflowCount = 0

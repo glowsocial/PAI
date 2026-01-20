@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { getAllPacks, PackInfo } from "@/lib/packs"
+import { getAllPacks } from "@/lib/packs"
 
 const typeColors: Record<string, string> = {
     skill: "#9854f1",

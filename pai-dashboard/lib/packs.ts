@@ -73,32 +73,32 @@ function parsePackReadme(folderId: string, content: string): PackInfo {
     let keywords: string[] = []
     let author = "unknown"
 
-    if (frontmatterMatch) {
+    if (frontmatterMatch && frontmatterMatch[1]) {
         const yaml = frontmatterMatch[1]
 
         // Parse name
         const nameMatch = yaml.match(/name:\s*(.+)/)
-        if (nameMatch) name = nameMatch[1].trim()
+        if (nameMatch?.[1]) name = nameMatch[1].trim()
 
         // Parse description
         const descMatch = yaml.match(/description:\s*(.+)/)
-        if (descMatch) description = descMatch[1].trim()
+        if (descMatch?.[1]) description = descMatch[1].trim()
 
         // Parse version
         const versionMatch = yaml.match(/version:\s*(.+)/)
-        if (versionMatch) version = versionMatch[1].trim()
+        if (versionMatch?.[1]) version = versionMatch[1].trim()
 
         // Parse type
         const typeMatch = yaml.match(/type:\s*(.+)/)
-        if (typeMatch) type = typeMatch[1].trim()
+        if (typeMatch?.[1]) type = typeMatch[1].trim()
 
         // Parse author
         const authorMatch = yaml.match(/author:\s*(.+)/)
-        if (authorMatch) author = authorMatch[1].trim()
+        if (authorMatch?.[1]) author = authorMatch[1].trim()
 
         // Parse keywords
         const keywordsMatch = yaml.match(/keywords:\s*\[([^\]]+)\]/)
-        if (keywordsMatch) {
+        if (keywordsMatch?.[1]) {
             keywords = keywordsMatch[1].split(",").map(k => k.trim().replace(/"/g, ""))
         }
     }
@@ -106,8 +106,8 @@ function parsePackReadme(folderId: string, content: string): PackInfo {
     // If no description from frontmatter, try to get first paragraph after title
     if (!description) {
         const lines = content.split("\n")
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i].trim()
+        for (const rawLine of lines) {
+            const line = rawLine.trim()
             if (line && !line.startsWith("#") && !line.startsWith("-") && !line.startsWith(">") && line.length > 20) {
                 description = line.slice(0, 200)
                 break

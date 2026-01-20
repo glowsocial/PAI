@@ -1,72 +1,92 @@
 # Glow Social Product Tiers & Logic Specification
 
-This document defines the feature sets, pricing, and backend logic for the three subscription tiers. Use this as the source of truth for both marketing copy and permission logic implementation.
+This document defines the feature sets, pricing, and backend logic for the subscription tiers. Use this as the source of truth for both marketing copy and permission logic implementation.
+
+**IMPORTANT: We have moved to an UNLIMITED pricing model. Remove all "scarcity" logic (credits/limits) and focus on "ease of use" (Pick, Click, Post).**
 
 ---
 
-## 1. Core
+## 1. Daily Posting
 **Price:** $49 / month
-**Tagline:** "Social media that runs itself."
+**Tagline:** "Unlimited AI-generated posts. Daily posting. Cancel anytime."
 
 ### Feature Set (Marketing)
-- ✓ **12 Posts / Month** (3 posts per week)
-- ✓ **Static Images Only** (High-quality stock/AI)
-- ✓ **Platforms:** Facebook, Instagram, LinkedIn, Google Business
-- ✓ **Approve in 2 minutes**
-- ✓ **Cancel anytime**
+- ✓ **Unlimited AI-Generated Posts**
+- ✓ **Daily Posting to All Platforms**
+- ✓ **Cancel Anytime**
+- ✓ **Custom images included**
+- ✓ **Brand voice that sounds like you**
+- ✓ **Platforms:** Facebook, Instagram, LinkedIn, Google Business, and more
 
 ### Technical Implementation Specs
-- **System Automation:** 12 Static Posts scheduled automatically per month.
-- **Manual Post Limit:** 0 (Users cannot create extra custom posts without upgrading or paying per post? *Clarification needed: previously implied strictly maintenance*).
-- **Video Credits:** 0
-- **Carousel Credits:** 0
-- **AI Re-rolls:** Limited (Standard allocation).
-- **Upgrade Trigger:** Clicking "Create Custom Post" prompts upgrade to Pro.
+- **Post Limit:** `null` (Unlimited)
+- **Video Credits:** 0 (Upgrade to Unlimited for videos)
+- **Carousel Credits:** 0 (Upgrade to Unlimited for carousels)
+- **AI Re-rolls:** Unlimited
+
+### Gamification (Dashboard)
+- **Remove:** "Credits Remaining" or "X/20 Posts Used"
+- **Show:** "Posts Published This Month" counter (counts UP to encourage usage)
 
 ---
 
-## 2. Pro
+## 2. Unlimited
 **Price:** $99 / month
-**Tagline:** "Social media that learns and adapts."
+**Tagline:** "Unlimited everything. Videos, carousels, and analytics."
 
 ### Feature Set (Marketing)
-- ✓ **36 Posts / Month** (Daily presence + bonus content)
-- ✓ **Format Mix:** 20 Static, 4 Videos, 4 Carousels
-- ✓ **8 Custom Post Credits:** For specific announcements/promos.
-- ✓ **Advanced Analytics:** Learns what content plays best.
-- ✓ **Platforms:** All Standard + Priority scheduling.
+- ✓ **Unlimited AI-Generated Posts**
+- ✓ **Daily Posting to All Platforms**
+- ✓ **Cancel Anytime**
+- ✓ **Unlimited carousel posts**
+- ✓ **Unlimited short-form videos**
+- ✓ **Performance analytics**
+- ✓ **Platforms:** All platforms including TikTok & YouTube Shorts
 
 ### Technical Implementation Specs
-- **System Automation:** 
-    - 20 Static Posts
-    - 4 Short-form Videos (Pexels API + TTS)
-    - 4 Carousels
-- **Manual Post Limit:** 8 Custom Posts / Month.
-- **Video Credits:** 4 (Part of automation mix).
-- **Carousel Credits:** 4 (Part of automation mix).
-- **Analytics Level:** `tier_2` (Includes engagement trends and content type performance).
+- **Post Limit:** `null` (Unlimited)
+- **Manual Post Limit:** `null` (Unlimited)
+- **Video Generation Limit:** `null` (Unlimited)
+- **Carousel Limit:** `null` (Unlimited)
+- **AI Generation Credits:** `null` (Unlimited)
+- **Analytics Level:** `tier_2` (Includes engagement trends and content type performance)
+- **Platforms:** Adds `tiktok`, `youtube_shorts` to `supported_platforms` array
+
+### Gamification (Dashboard)
+- **Show:** "Posts Published This Month" counter (counts UP to encourage usage)
+- **Show:** Content type breakdown (videos, carousels, static posts)
 
 ---
 
-## 3. Unlimited (formerly Momentum)
-**Price:** $199 / month
-**Tagline:** "Social media that dominates."
+## Onboarding: The "Magic Moment"
 
-### Feature Set (Marketing)
-- ✓ **Daily "Done-For-You" Base:** We auto-generate 30 optimized posts/mo so your feed is never empty.
-- ✓ **UNLIMITED Video Generation:** Create as many Reel/TikTok style videos as you want at no extra cost.
-- ✓ **UNLIMITED Custom Posts:** "Create Post" button is always active.
-- ✓ **UNLIMITED AI Ideas:** Generate ideas until you find the perfect one.
-- ✓ **All Platforms:** Adds **TikTok & YouTube Shorts** support.
+### Critical Requirement
+When a new user finishes onboarding, do NOT drop them on a blank calendar or dashboard.
 
-### Technical Implementation Specs
-- **System Automation (The Floor):**
-    - Target: 30 posts scheduled per month.
-    - Mix: ~10 Video, ~10 Carousel, ~10 Static (Optimized based on user analytics).
-    - *Note:* Automation fills the calendar to ensure daily presence.
-- **Manual Post Limit:** `null` (Unlimited).
-- **Video Generation Limit:** `null` (Unlimited).
-- **Carousel Limit:** `null` (Unlimited).
-- **AI Generation Credits:** `null` (Unlimited).
-- **Platforms:** Adds `tiktok`, `youtube_shorts` to `supported_platforms` array.
-- **Cost Control:** Videos utilize Pexels API + Text-to-Speech to minimize generation costs, creating a high margin on the $199 price point.
+### Immediate Action
+The system must immediately generate and display **3-5 draft posts ready for review**.
+
+### Logic
+The user needs to feel the "Magic" immediately. The first view must be **content**, not a "Create" button.
+
+---
+
+## "Pick, Click, Post" Workflow
+
+### How It Works (User Flow)
+1. **Connect:** "Connect your accounts."
+2. **Pick:** "Swipe through tailored ideas. Pick the ones you like." (Use a checkmark/swipe icon)
+3. **Post:** "Click to publish. We handle the captions, images, and hashtags."
+
+### Terminology Updates
+Replace the following terms throughout the codebase:
+- "Strategy" → "Find"
+- "Curate" → "Pick"
+- "Analyze" → "Track" (where appropriate in user-facing copy)
+
+---
+
+## Cost Control Notes
+- Videos utilize Pexels API + Text-to-Speech to minimize generation costs
+- High margin maintained on the $99 Unlimited price point
+- Unlimited model encourages retention over upsells

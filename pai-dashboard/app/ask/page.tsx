@@ -110,7 +110,7 @@ export default function AskPage() {
             <input
               type="text"
               value={input}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
+              onChange={(e) => setInput((e.target as HTMLInputElement).value)}
               placeholder="Type your message..."
               disabled={isLoading}
               className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2e7de9] focus:border-transparent disabled:bg-gray-100"

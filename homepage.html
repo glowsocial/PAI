@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Social™ - Unlimited Social Media Posting | Starting at $49/Month</title>
+    <meta name="description"
+        content="The app that creates and publishes social media for your local business. Pick, click, post. Daily posting to all platforms, cancel anytime. Starting at $49/month.">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Urbanist:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<style>
+    /* CSS Variables - Glow Social Brand */
+    :root {
+        --glow-lime: #d7e278;
+        --glow-lime-hover: #e2ed84;
+        --glow-navy: #192734;
+        --glow-everglow: #9399cc;
+        --glow-skyline: #ddecf7;
+        --glow-paper: #faf8f7;
+        --glow-open-sign: #d2c964;
+        --primary-color: var(--glow-lime);
+        --secondary-color: var(--glow-everglow);
+        --accent-color: var(--glow-open-sign);
+        --text-primary: var(--glow-navy);
+        --text-secondary: #475569;
+        --text-light: #94a3b8;
+        --bg-body: #f8fafc;
+        --bg-white: #ffffff;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --max-width: 960px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Trademark symbols */
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+
+        &>.tm,
+        &>sup {
+            font-size: 0.5em;
+            vertical-align: super;
+        }
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg-body);
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Urbanist', sans-serif;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--glow-navy);
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    h2 {
+        font-size: clamp(1.75rem, 3.5vw, 2.25rem) !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    p {
+        margin-bottom: 1.25rem;
+    }
+
+    .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    section {
+        padding: 4rem 0;
+        position: relative;
+    }
+
+    section.alt-bg {
+        background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+    }
+
+    section.dark-bg {
+        background: var(--glow-navy);
+        color: white;
+    }
+
+    section.dark-bg h2,
+    section.dark-bg h3 {
+        color: white;
+    }
+
+    .btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.75rem 1.5rem !important;
+        border-radius: 3rem !important;
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        cursor: pointer !important;
+        border: none !important;
+        font-family: 'Urbanist', sans-serif !important;
+        letter-spacing: 0.02em !important;
+        text-transform: uppercase !important;
+    }
+
+    .btn-primary {
+        background: var(--glow-lime);
+        color: var(--glow-navy);
+        box-shadow: 0 4px 15px rgba(215, 226, 120, 0.4);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(215, 226, 120, 0.6);
+        background: var(--glow-lime-hover);
+    }
+
+    .btn-secondary {
+        background: white;
+        border: 2px solid var(--glow-navy);
+        color: var(--glow-navy);
+    }
+
+    .btn-secondary:hover {
+        background: var(--glow-navy);
+        color: white;
+    }
+
+    .btn-small {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .btn-large {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 3rem 0 4rem;
+        background: radial-gradient(ellipse at top right, rgba(215, 226, 120, 0.2), transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(129, 140, 248, 0.1), transparent 50%),
+            #ffffff;
+    }
+
+    .hero-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2.5rem !important;
+        align-items: center !important;
+    }
+
+    .hero-content {
+        max-width: 480px !important;
+    }
+
+    .hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem 1rem !important;
+        background: var(--glow-navy) !important;
+        color: var(--glow-lime) !important;
+        border-radius: 2rem !important;
+        font-weight: 600 !important;
+        font-size: 0.8rem !important;
+        margin-bottom: 1.5rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .hero-badge i {
+        font-size: 0.7rem;
+    }
+
+    .hero h1 span {
+        color: var(--glow-everglow);
+    }
+
+    .hero-tagline {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: var(--glow-navy);
+        margin-bottom: 0.75rem;
+        font-family: 'Urbanist', sans-serif;
+    }
+
+    .hero-subheadline {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-cta .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .hero-proof {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .hero-avatars {
+        display: flex;
+    }
+
+    .hero-avatars span {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid white;
+        margin-left: -12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    }
+
+    .hero-avatars span:first-child {
+        margin-left: 0;
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    }
+
+    .hero-avatars span:nth-child(2) {
+        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    }
+
+    .hero-avatars span:nth-child(3) {
+        background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+    }
+
+    .hero-proof-text {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .hero-proof-text strong {
+        color: var(--glow-navy);
+    }
+
+    .hero-visual {
+        position: relative;
+    }
+
+    .hero-mockup {
+        background: white;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-xl);
+        padding: 1.5rem;
+        transform: rotate(2deg);
+    }
+
+    .mockup-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .mockup-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--glow-lime) 0%, #a3b861 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+
+    .mockup-meta h4 {
+        font-size: 1rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .mockup-meta span {
+        font-size: 0.8rem;
+        color: var(--text-light);
+    }
+
+    .mockup-content {
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .mockup-image {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .mockup-engagement {
+        display: flex;
+        gap: 1.5rem;
+        color: var(--text-light);
+        font-size: 0.85rem;
+    }
+
+    .mockup-engagement span {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    .hero-float-card {
+        position: absolute;
+        background: white;
+        border-radius: 1rem;
+        padding: 1rem 1.25rem;
+        box-shadow: var(--shadow-lg);
+        font-size: 0.9rem;
+    }
+
+    .hero-float-card.card-1 {
+        top: -20px;
+        right: -20px;
+        transform: rotate(-3deg);
+    }
+
+    .hero-float-card.card-2 {
+        bottom: 60px;
+        left: -40px;
+        transform: rotate(3deg);
+    }
+
+    .float-card-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        margin-right: 0.5rem;
+    }
+
+    .float-card-icon.green {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+    .float-card-icon.blue {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    /* Social Proof Bar */
+    .social-proof-bar {
+        background: var(--glow-navy);
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+
+    .social-proof-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .proof-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: white;
+    }
+
+    .proof-item i {
+        color: var(--glow-lime);
+        font-size: 1.25rem;
+    }
+
+    .proof-item span {
+        font-size: 0.95rem;
+        opacity: 0.9;
+    }
+
+    .proof-item strong {
+        color: var(--glow-lime);
+    }
+
+    /* Problem Section */
+    .problem-section {
+        background: white;
+    }
+
+    .problem-grid {
+        display: block;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .problem-content h2 {
+        margin-bottom: 1rem;
+    }
+
+    .problem-content p {
+        font-size: 1rem;
+        color: var(--text-secondary);
+    }
+
+    .problem-highlight {
+        background: var(--glow-skyline);
+        border-left: 4px solid var(--glow-everglow);
+        padding: 1.25rem;
+        border-radius: 0 1rem 1rem 0;
+        margin: 1.5rem 0;
+    }
+
+    .problem-highlight p {
+        margin: 0;
+        font-weight: 500;
+        color: var(--glow-navy);
+    }
+
+    .problem-stats {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .problem-stat {
+        flex: 1;
+        text-align: center;
+        padding: 1rem 0.75rem;
+        background: #f8fafc;
+        border-radius: 0.75rem;
+    }
+
+    .problem-stat .number {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--glow-navy);
+        font-family: 'Urbanist', sans-serif;
+        line-height: 1;
+    }
+
+    .problem-stat .label {
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+        margin-top: 0.25rem;
+    }
+
+    /* How It Works */
+    .how-it-works {
+        text-align: center;
+    }
+
+    .how-it-works h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .how-tagline {
+        display: inline-block;
+        background: var(--glow-navy);
+        color: var(--glow-lime);
+        padding: 0.5rem 1.25rem;
+        border-radius: 2rem;
+        font-family: 'Urbanist', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .how-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 550px;
+        margin: 0 auto 2rem;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .step-card {
+        background: white;
+        border-radius: 1.25rem;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        position: relative;
+    }
+
+    .step-number {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: var(--glow-lime);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Urbanist', sans-serif;
+        font-weight: 800;
+        font-size: 1.25rem;
+        color: var(--glow-navy);
+    }
+
+    .step-icon {
+        display: none;
+    }
+
+    .step-card h3 {
+        margin-bottom: 0.75rem;
+    }
+
+    .step-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .step-visual {
+        margin-top: 1.25rem;
+    }
+
+    .platform-icons {
+        display: flex;
+        justify-content: center;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .platform-icons i {
+        font-size: 1.1rem;
+        padding: 0.4rem;
+        border-radius: 0.4rem;
+        background: #f1f5f9;
+    }
+
+    .platform-icons .fa-instagram {
+        color: #E4405F;
+    }
+
+    .platform-icons .fa-tiktok {
+        color: #000000;
+    }
+
+    .platform-icons .fa-facebook {
+        color: #1877F2;
+    }
+
+    .platform-icons .fa-linkedin {
+        color: #0A66C2;
+    }
+
+    .platform-icons .fa-google {
+        color: #4285F4;
+    }
+
+    .platform-icons .fa-threads {
+        color: #000000;
+    }
+
+    .platform-icons .fa-reddit {
+        color: #FF4500;
+    }
+
+    .platform-icons .fa-x-twitter {
+        color: #000000;
+    }
+
+    .platform-icons .fa-youtube {
+        color: #FF0000;
+    }
+
+    .swipe-mockup {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 1rem;
+        padding: 0.75rem;
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    .swipe-idea {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    .swipe-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .swipe-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .swipe-btn.skip {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .swipe-btn.pick {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+    .generated-content {
+        background: #f0fdf4;
+        border: 2px solid #86efac;
+        border-radius: 0.75rem;
+        padding: 0.625rem;
+        font-size: 0.7rem;
+        text-align: left;
+    }
+
+    .generated-content .label {
+        font-weight: 600;
+        color: #166534;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.25rem;
+    }
+
+    .generated-item {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: var(--text-secondary);
+        padding: 0.15rem 0;
+    }
+
+    .generated-item i {
+        color: #22c55e;
+        font-size: 0.6rem;
+    }
+
+    .step-time {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.35rem 0.75rem;
+        background: #f1f5f9;
+        border-radius: 2rem;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+
+    /* Demo Video Section */
+    .demo-section {
+        text-align: center;
+    }
+
+    .demo-section h2 {
+        color: var(--glow-lime);
+        margin-bottom: 1rem;
+    }
+
+    .demo-subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 550px;
+        margin: 0 auto 2rem;
+    }
+
+    .video-wrapper {
+        max-width: 700px;
+        margin: 0 auto;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-wrapper iframe {
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+    }
+
+    /* What You Get */
+    .features-section {
+        text-align: center;
+    }
+
+    .features-section h2 {
+        margin-bottom: 1rem;
+    }
+
+    .features-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 550px;
+        margin: 0 auto 2rem;
+    }
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .feature-card {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+        text-align: left;
+        display: flex;
+        gap: 0.875rem;
+        align-items: flex-start;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid #e2e8f0;
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        background: linear-gradient(135deg, var(--glow-lime) 0%, #c5d866 100%);
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        color: var(--glow-navy);
+    }
+
+    .feature-content h3 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .feature-content p {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+        text-align: center;
+    }
+
+    .pricing-section h2 {
+        margin-bottom: 1rem;
+    }
+
+    .pricing-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 550px;
+        margin: 0 auto 2rem;
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+
+    .pricing-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 650px;
+    }
+
+    .pricing-card {
+        background: white;
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        text-align: center;
+        border: 2px solid #e2e8f0;
+        position: relative;
+    }
+
+    .pricing-card.featured {
+        border-color: var(--glow-lime);
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(215, 226, 120, 0.3);
+        padding-top: 2.5rem;
+    }
+
+    .pricing-badge {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        background: var(--glow-lime);
+        color: var(--glow-navy);
+        padding: 0.35rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .pricing-card h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    .pricing-card .price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--glow-navy);
+        font-family: 'Urbanist', sans-serif;
+        line-height: 1;
+    }
+
+    .pricing-card .price-period {
+        color: var(--text-secondary);
+        font-size: 1rem;
+    }
+
+    .pricing-card .price-note {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-top: 0.5rem;
+    }
+
+    .pricing-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.25rem 0;
+        text-align: left;
+    }
+
+    .pricing-card li {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .pricing-card li i {
+        margin-top: 0.2rem;
+        font-size: 0.9rem;
+    }
+
+    .pricing-card li i.fa-check {
+        color: #22c55e;
+    }
+
+    .pricing-card li i.fa-xmark {
+        color: #94a3b8;
+    }
+
+    .pricing-card.muted {
+        opacity: 0.7;
+    }
+
+    .pricing-card.muted .price {
+        text-decoration: line-through;
+        text-decoration-color: #ef4444;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+        text-align: center;
+    }
+
+    .testimonials-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+
+    .testimonial-card {
+        background: white;
+        border-radius: 1.25rem;
+        padding: 1.5rem;
+        text-align: left;
+        box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-stars {
+        color: #facc15;
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+        color: var(--text-primary);
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+        font-style: italic;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .testimonial-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--glow-lime) 0%, #a3b861 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--glow-navy);
+    }
+
+    .testimonial-info h4 {
+        font-size: 0.875rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .testimonial-info span {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+
+    /* Who It's For */
+    .audience-section {
+        text-align: center;
+    }
+
+    .audience-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .audience-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .audience-card {
+        text-align: left;
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+    }
+
+    .audience-card.good-fit {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        border: 2px solid #86efac;
+    }
+
+    .audience-card.not-fit {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+    }
+
+    .audience-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .audience-card.good-fit h3 {
+        color: #166534;
+    }
+
+    .audience-card.not-fit h3 {
+        color: #64748b;
+    }
+
+    .audience-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .audience-card li {
+        padding: 0.375rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    .audience-card li::before {
+        position: absolute;
+        left: 0;
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+    }
+
+    .audience-card.good-fit li::before {
+        content: '\f00c';
+        color: #22c55e;
+    }
+
+    .audience-card.not-fit li::before {
+        content: '\f068';
+        color: #94a3b8;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+        text-align: center;
+    }
+
+    .faq-section h2 {
+        margin-bottom: 2rem;
+    }
+
+    .faq-grid {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .faq-item {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        margin-bottom: 0.75rem;
+        overflow: hidden;
+    }
+
+    .faq-question {
+        padding: 1rem 1.25rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.2s;
+    }
+
+    .faq-question:hover {
+        background: #f8fafc;
+    }
+
+    .faq-question i {
+        color: var(--text-light);
+        transition: transform 0.3s;
+    }
+
+    .faq-answer {
+        padding: 0 1.25rem 1rem;
+        color: var(--text-secondary);
+        display: none;
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
+
+    .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+        display: block;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        text-align: center;
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        padding: 4rem 0;
+    }
+
+    .final-cta h2 {
+        margin-bottom: 0.75rem;
+    }
+
+    .final-cta .subhead {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 550px;
+        margin: 0 auto 1.5rem;
+    }
+
+    .final-cta .cta-buttons {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .final-cta .price-reminder {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+    }
+
+    .final-cta .price-reminder strong {
+        color: var(--glow-navy);
+        font-size: 1.1rem;
+    }
+
+    .guarantee-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 0.75rem;
+        padding: 0.875rem 1.25rem;
+        margin-top: 0.75rem;
+    }
+
+    .guarantee-box i {
+        font-size: 1.5rem;
+        color: #22c55e;
+    }
+
+    .guarantee-box p {
+        margin: 0;
+        text-align: left;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+
+    .guarantee-box strong {
+        color: var(--glow-navy);
+    }
+
+    /* Responsive - Tablet */
+    @media (max-width: 900px) {
+        .hero-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .hero-visual {
+            order: 1;
+            max-width: 350px;
+            margin: 1rem auto 0;
+        }
+
+        .hero-content {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .hero-cta {
+            justify-content: center;
+        }
+
+        .hero-proof {
+            justify-content: center;
+        }
+
+        .hero-float-card {
+            display: none;
+        }
+
+        .features-grid {
+            gap: 0.75rem;
+        }
+
+        .audience-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+
+    /* Responsive - Mobile */
+    @media (max-width: 600px) {
+        :root {
+            --max-width: 100%;
+        }
+
+        body {
+            font-size: 15px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        .container {
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: 2.5rem 0;
+        }
+
+        .hero {
+            padding: 1.5rem 0 2.5rem;
+        }
+
+        .hero-badge {
+            font-size: 0.7rem;
+            padding: 0.4rem 0.75rem;
+        }
+
+        .hero-subheadline {
+            font-size: 1rem;
+        }
+
+        .hero-cta {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .hero-cta .btn {
+            width: 100%;
+        }
+
+        .hero-visual {
+            display: block;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .hero-visual img {
+            max-width: 100%;
+            transform: none !important;
+        }
+
+        .hero-mockup {
+            padding: 1rem;
+            transform: none;
+        }
+
+        .mockup-image {
+            height: 150px;
+            font-size: 2rem;
+        }
+
+        .social-proof-content {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .proof-item {
+            font-size: 0.85rem;
+        }
+
+        .problem-stats {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .problem-stat {
+            padding: 0.75rem;
+        }
+
+        .problem-stat .number {
+            font-size: 1.5rem;
+        }
+
+        .steps-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            padding: 1.5rem 1rem;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .feature-card {
+            padding: 1rem;
+        }
+
+        .pricing-grid,
+        .pricing-grid-2 {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .pricing-card {
+            padding: 1.25rem;
+        }
+
+        .pricing-card.featured {
+            transform: none;
+            padding-top: 2rem;
+        }
+
+        .pricing-card .price {
+            font-size: 2rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.25rem;
+            font-size: 0.85rem;
+        }
+
+        .final-cta {
+            padding: 2.5rem 0;
+        }
+
+        .guarantee-box {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+        }
+
+        .guarantee-box p {
+            text-align: center;
+        }
+    }
+
+    /* Animations */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-map-marker-alt"></i> The App for Local Businesses
+                    </div>
+
+                    <h1>Social media that <span>runs itself</span>...</h1>
+                    <p class="hero-tagline">Posts created and published for you.</p>
+
+                    <p class="hero-subheadline">An app that creates and publishes content for you — so you can run your
+                        business.</p>
+
+                    <div class="hero-cta">
+                        <a href="https://app.glowsocial.com/pricing" class="btn btn-primary">Get Started</a>
+                        <a href="https://app.glowsocial.com/examples" class="btn btn-secondary"><i class="fas fa-images"
+                                style="margin-right: 0.5rem;"></i> See Examples</a>
+                    </div>
+
+                    <div class="hero-proof">
+                        <div class="hero-avatars">
+                            <span><i class="fas fa-store" style="font-size: 0.9rem;"></i></span>
+                            <span><i class="fas fa-utensils" style="font-size: 0.9rem;"></i></span>
+                            <span><i class="fas fa-cut" style="font-size: 0.9rem;"></i></span>
+                            <span><i class="fas fa-wrench" style="font-size: 0.9rem;"></i></span>
+                        </div>
+                        <p class="hero-proof-text"><strong>Local businesses</strong> stay visible with Glow
+                            Social<sup>™</sup></p>
+                    </div>
+                </div>
+
+                <div class="hero-visual" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="https://glowsocial.com/wp-content/uploads/glow-social-app-mockup.jpg"
+                        alt="Glow Social app - Review and publish posts"
+                        style="width: 100%; max-width: 420px; border-radius: 1rem; box-shadow: 0 25px 50px rgba(0,0,0,0.2); transform: rotate(2deg);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <div class="container">
+            <div class="social-proof-content">
+                <div class="proof-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Setup in <strong>5 minutes</strong></span>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span><strong>Daily posting</strong> available</span>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span><strong>13 platforms</strong> supported</span>
+                </div>
+                <div class="proof-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span><strong>Cancel anytime</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section - Manifesto Style -->
+    <section class="problem-section reveal">
+        <div class="container">
+            <div class="problem-grid" style="text-align: center;">
+                <div class="problem-content">
+                    <h2>The chain restaurant down the street posts every day</h2>
+                    <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem;">They show up in feeds
+                        constantly. Professional graphics, consistent schedule, always visible.</p>
+
+                    <p style="font-size: 1.15rem; max-width: 600px; margin: 0 auto 1.5rem;">
+                        You post when you can. <strong style="font-weight: 800; color: var(--glow-navy);">Which is
+                            almost never.</strong>
+                    </p>
+                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 550px; margin: 0 auto 2.5rem;">
+                        Because you're busy actually running a business.</p>
+
+                    <div class="problem-highlight"
+                        style="max-width: 650px; margin: 0 auto; text-align: center; border-left: none; border-radius: 1rem; padding: 2rem;">
+                        <p style="font-size: 1.25rem; line-height: 1.6;">Now you can post every day too.<br>
+                            <span style="font-size: 1rem; color: var(--text-secondary);">Without hiring anyone. Without
+                                learning anything new. Without adding one more thing to your plate.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works alt-bg reveal" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="how-tagline">Pick, Click, Post</div>
+            <p class="how-subtitle">Connect your accounts. Pick the content you love. Click to publish — we handle the
+                rest.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Connect</h3>
+                    <p>Connect your accounts.</p>
+                    <div class="step-visual">
+                        <div class="platform-icons">
+                            <i class="fab fa-facebook" title="Facebook"></i>
+                            <i class="fab fa-google" title="Google Business Profile"></i>
+                            <i class="fab fa-instagram" title="Instagram"></i>
+                            <i class="fab fa-linkedin" title="LinkedIn"></i>
+                            <i class="fab fa-threads" title="Threads"></i>
+                            <i class="fab fa-reddit" title="Reddit"></i>
+                            <i class="fab fa-x-twitter" title="X/Twitter"></i>
+                            <i class="fab fa-youtube" title="YouTube"></i>
+                            <i class="fab fa-tiktok" title="TikTok"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Pick</h3>
+                    <p>Swipe through tailored ideas. Pick the ones you like.</p>
+                    <div class="step-visual">
+                        <div class="swipe-mockup">
+                            <div class="swipe-idea">"Share a behind-the-scenes look at how you prepare for the day..."
+                            </div>
+                            <div class="swipe-buttons">
+                                <div class="swipe-btn skip">✗</div>
+                                <div class="swipe-btn pick">✓</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Post</h3>
+                    <p>Click to publish. We handle the captions, images, and hashtags.</p>
+                    <div class="step-visual">
+                        <div class="generated-content">
+                            <div class="label">We Handle:</div>
+                            <div class="generated-item"><i class="fas fa-check"></i> Captions</div>
+                            <div class="generated-item"><i class="fas fa-check"></i> Images</div>
+                            <div class="generated-item"><i class="fas fa-check"></i> Hashtags</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://app.glowsocial.com/pricing" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video -->
+    <section class="demo-section dark-bg reveal" id="demo">
+        <div class="container">
+            <h2>See It In Action</h2>
+            <p class="demo-subtitle">Watch how Glow Social creates and publishes content for your business
+                automatically.</p>
+
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/i7KiId29ATM?rel=0" title="See Glow Social in Action"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="features-section reveal">
+        <div class="container">
+            <h2>What's Included</h2>
+            <p class="features-subtitle">No complicated dashboards. No content calendars to manage. Just results.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-pencil-alt"></i></div>
+                    <div class="feature-content">
+                        <h3>Posts Created For You</h3>
+                        <p>Original content written specifically for your business. Not templates or generic captions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-share-alt"></i></div>
+                    <div class="feature-content">
+                        <h3>Multi-Platform Posting</h3>
+                        <p>Facebook, Instagram, LinkedIn, TikTok. Each post optimized for the platform it's going to.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-image"></i></div>
+                    <div class="feature-content">
+                        <h3>Graphics Included</h3>
+                        <p>Professional visuals created for each post. No stock photo hunting or Canva struggles.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="feature-content">
+                        <h3>Automatic Publishing</h3>
+                        <p>Posts go live on schedule. No logging in, no copy-pasting, no remembering to post.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-edit"></i></div>
+                    <div class="feature-content">
+                        <h3>Full Control</h3>
+                        <p>Edit any post before it goes live, regenerate if you want something different, or add your
+                            own.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-comment-dots"></i></div>
+                    <div class="feature-content">
+                        <h3>Sounds Like You</h3>
+                        <p>Trained on your voice and style. Posts feel authentic, not robotic or generic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Pricing -->
+    <section class="pricing-section reveal" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="pricing-subtitle">No hidden fees. No contracts. Cancel anytime.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Glo Core</h3>
+                    <div class="price">$49</div>
+                    <div class="price-period">/month</div>
+
+                    <ul>
+                        <li><i class="fas fa-check"></i> 12+ posts per month</li>
+                        <li><i class="fas fa-check"></i> Custom images included</li>
+                        <li><i class="fas fa-check"></i> 13 platforms supported</li>
+                        <li><i class="fas fa-check"></i> Brand voice that sounds like you</li>
+                        <li><i class="fas fa-check"></i> Cancel anytime</li>
+                    </ul>
+                    <a href="https://app.glowsocial.com/pricing" class="btn btn-secondary" style="width: 100%;">Get
+                        Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Glo Pro</h3>
+                    <div class="price">$99</div>
+                    <div class="price-period">/month</div>
+
+                    <ul>
+                        <li><i class="fas fa-check"></i> 20+ posts per month</li>
+                        <li><i class="fas fa-check"></i> 4 carousel posts</li>
+                        <li><i class="fas fa-check"></i> 4 short-form videos</li>
+                        <li><i class="fas fa-check"></i> 8 custom posts on any topic</li>
+                        <li><i class="fas fa-check"></i> Performance analytics</li>
+                    </ul>
+                    <a href="https://app.glowsocial.com/pricing" class="btn btn-secondary" style="width: 100%;">Go
+                        Pro</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Best Value</div>
+                    <h3>Glo Unlimited</h3>
+                    <div class="price">$199</div>
+                    <div class="price-period">/month</div>
+
+                    <ul>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited posts</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited videos</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited carousels</strong></li>
+                        <li><i class="fas fa-check"></i> Daily posting to all platforms</li>
+                        <li><i class="fas fa-check"></i> TikTok & YouTube Shorts</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <a href="https://app.glowsocial.com/pricing" class="btn btn-primary" style="width: 100%;">Go
+                        Unlimited</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="audience-section reveal">
+        <div class="container">
+            <h2>Is Glow Social<sup>™</sup> Right For You?</h2>
+
+            <div class="audience-grid">
+                <div class="audience-card good-fit">
+                    <h3><i class="fas fa-check-circle"></i> Great Fit</h3>
+                    <ul>
+                        <li>Local businesses that serve their community</li>
+                        <li>Owners too busy to post consistently</li>
+                        <li>Teams without a dedicated marketing person</li>
+                        <li>Businesses tired of abandoned social pages</li>
+                        <li>Anyone who's tried and failed to "be consistent"</li>
+                    </ul>
+                </div>
+
+                <div class="audience-card not-fit">
+                    <h3><i class="fas fa-minus-circle"></i> Not the Best Fit</h3>
+                    <ul>
+                        <li>Enterprise companies with marketing teams</li>
+                        <li>Businesses needing real-time posting</li>
+                        <li>Franchises with strict brand guidelines</li>
+                        <li>Companies requiring complex approval workflows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta reveal">
+        <div class="container">
+            <h2>Ready to Stop Worrying About Social Media?</h2>
+            <p class="subhead">Get consistent, professional social media presence for your business.</p>
+
+            <div class="cta-buttons">
+                <a href="https://app.glowsocial.com/pricing" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <p class="price-reminder">
+                Starting at <strong>$49/month</strong>
+            </p>
+
+            <div class="guarantee-box">
+                <i class="fas fa-shield-alt"></i>
+                <p><strong>No Contracts</strong><br>Cancel anytime. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll Reveal Animation
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+
+</html>
