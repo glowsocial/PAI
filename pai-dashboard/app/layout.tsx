@@ -16,7 +16,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className="bg-gray-50" suppressHydrationWarning>
                 <Sidebar />
-                <main className="pl-64">
+                <main className="pl-56">
                     <div className="min-h-screen">
                         {children}
                     </div>
