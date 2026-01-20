@@ -217,19 +217,12 @@ export default function HomePage() {
                 ))}
             </div>
 
-            {/* CTA */}
-            <div className="mt-10 p-6 rounded-xl bg-[#192734] text-white">
-                <h2 className="text-lg mb-2">NEED SOMETHING ELSE?</h2>
-                <p className="text-white/70 text-sm mb-4">
-                    This is just the highlight reel. Ask me anything — I&apos;m here to help.
+            {/* Footer Note */}
+            <div className="mt-10 p-6 rounded-xl bg-[#192734]/5 border border-[#192734]/10">
+                <p className="text-sm text-[#192734]/60 text-center">
+                    This is a read-only reference of your PAI capabilities.
+                    To use these skills and patterns, work with PAI in your AI coding environment.
                 </p>
-                <Link
-                    href="/ask"
-                    className="inline-block px-5 py-2.5 bg-[#d7e278] text-[#192734] font-semibold rounded-lg hover:bg-[#d7e278]/90 transition-colors text-sm"
-                    style={{ textTransform: 'none', fontFamily: 'Inter' }}
-                >
-                    Ask PAI anything →
-                </Link>
             </div>
         </div>
     )

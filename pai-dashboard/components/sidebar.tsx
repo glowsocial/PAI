@@ -2,13 +2,13 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, Sparkles, MessageSquare, FileText } from "lucide-react"
+import { Home, Package, Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navigation = [
     { name: "What We Can Do", href: "/", icon: Home },
-    { name: "Ask PAI", href: "/ask", icon: MessageSquare },
-    { name: "All Packs", href: "/packs", icon: FileText },
+    { name: "All Packs", href: "/packs", icon: Package },
+    { name: "Skills", href: "/skills", icon: Sparkles },
 ]
 
 export function Sidebar() {
@@ -21,7 +21,7 @@ export function Sidebar() {
                     <h1 className="text-xl font-semibold tracking-wide">
                         PAI DASHBOARD
                     </h1>
-                    <p className="text-xs text-[#9399cc] mt-1">Your Personal AI System</p>
+                    <p className="text-xs text-[#9399cc] mt-1">Reference Only</p>
                 </div>
             </div>
             <nav className="flex-1 space-y-1 px-3 py-6">
@@ -52,10 +52,9 @@ export function Sidebar() {
             </nav>
 
             <div className="border-t border-white/10 p-4">
-                <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#d7e278] animate-pulse" />
-                    <span className="text-xs text-white/60">Ready to help</span>
-                </div>
+                <p className="text-xs text-white/40 text-center">
+                    Read-only capability reference
+                </p>
             </div>
         </div>
     )
