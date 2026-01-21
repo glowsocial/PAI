@@ -14,6 +14,7 @@ export interface FabricPattern {
     id: string
     name: string
     path: string
+    isCustom: boolean
 }
 
 export interface MarketingAsset {
@@ -85,14 +86,40 @@ export function getFabricPatterns(): FabricPattern[] {
         return []
     }
 
+    // Known custom pattern prefixes (yours, not default Fabric)
+    const customPrefixes = [
+        "10_", "10x_", "ai_visibility", "ascension", "awareness",
+        "bethany", "bob_stone", "brand_platform", "campaign_driver",
+        "cold_outreach", "content_", "glow_social", "create_hormozi",
+        "five_awareness", "generate_authority", "generate_carousel",
+        "generate_comparison", "generate_local", "generate_question",
+        "generate_research", "generate_social_post", "generate_story",
+        "generate_video_script", "generate_visual", "sales_letter",
+        "same_side", "setup_stripe", "sms_followup", "social_multi",
+        "soft_pitch", "spector", "t_", "ten_minute_vsl", "three_desires",
+        "title_optimization", "value_bombs", "vsl_framework", "webinar_funnel",
+        "who_do_you_know"
+    ]
+
     const folders = fs.readdirSync(patternsDir, { withFileTypes: true })
         .filter(d => d.isDirectory())
 
-    return folders.map(folder => ({
-        id: folder.name,
-        name: folder.name.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-        path: path.join(patternsDir, folder.name),
-    })).sort((a, b) => a.name.localeCompare(b.name))
+    const patterns = folders.map(folder => {
+        const isCustom = customPrefixes.some(prefix => folder.name.startsWith(prefix))
+        return {
+            id: folder.name,
+            name: folder.name.split("_").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+            path: path.join(patternsDir, folder.name),
+            isCustom,
+        }
+    })
+
+    // Sort: custom first, then alphabetically within each group
+    return patterns.sort((a, b) => {
+        if (a.isCustom && !b.isCustom) return -1
+        if (!a.isCustom && b.isCustom) return 1
+        return a.name.localeCompare(b.name)
+    })
 }
 
 export function getMarketingAssets(): MarketingAsset[] {
