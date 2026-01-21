@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { getFabricPatterns } from "@/lib/skills"
 
@@ -23,7 +24,7 @@ export default function HomePage() {
                     FABRIC PATTERNS
                 </h1>
                 <p className="text-sm text-[#192734]/60">
-                    {patterns.length} patterns — click any letter to jump
+                    {patterns.length} patterns — click any to see the prompt
                 </p>
             </div>
 
@@ -49,13 +50,14 @@ export default function HomePage() {
                         </h2>
                         <div className="flex flex-wrap gap-1.5">
                             {grouped[letter]?.map((pattern) => (
-                                <Badge
-                                    key={pattern.id}
-                                    variant="outline"
-                                    className="text-xs py-1 px-2 bg-white hover:bg-[#d7e278] transition-colors cursor-default"
-                                >
-                                    {pattern.name}
-                                </Badge>
+                                <Link key={pattern.id} href={`/pattern/${pattern.id}`}>
+                                    <Badge
+                                        variant="outline"
+                                        className="text-xs py-1 px-2 bg-white hover:bg-[#d7e278] transition-colors cursor-pointer"
+                                    >
+                                        {pattern.name}
+                                    </Badge>
+                                </Link>
                             ))}
                         </div>
                     </div>
