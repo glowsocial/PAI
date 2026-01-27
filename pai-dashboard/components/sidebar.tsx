@@ -2,10 +2,11 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Layers, Sparkles } from "lucide-react"
+import { Layers, Sparkles, User } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navigation = [
+    { name: "My Identity", href: "/identity", icon: User },
     { name: "Fabric Patterns", href: "/", icon: Layers },
     { name: "My Skills", href: "/skills", icon: Sparkles },
 ]
