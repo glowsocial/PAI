@@ -1,0 +1,79 @@
+# ============================================
+# GlowSocial 404 Fixes — Paste ABOVE the WordPress rules in .htaccess
+# ============================================
+
+# --- 410 Gone: Junk/spam URLs ---
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Junk URLs → 410 Gone
+RewriteRule ^called$ - [G,L]
+RewriteRule ^onboarding-standard/?$ - [G,L]
+RewriteRule ^op-funnel-next-step/ - [G,L]
+
+# Author pagination → 410 Gone
+RewriteRule ^author/omalleyk121217/page/ - [G,L]
+
+# Category pagination → 410 Gone
+RewriteRule ^category/.*/page/[0-9]+/?$ - [G,L]
+
+# Tag pagination → 410 Gone
+RewriteRule ^tag/.*/page/[0-9]+/?$ - [G,L]
+
+# WP system files → 410 Gone
+RewriteRule ^wp-content/themes/ - [G,L]
+RewriteRule ^wp-content/plugins/ - [G,L]
+RewriteRule ^wp-content/uploads/ - [G,L]
+</IfModule>
+
+# --- 301 Redirects: Deleted blog posts → Homepage ---
+Redirect 301 /unlock-higher-earnings-exploring-the-social-media-manager-salary-landscape/ /
+Redirect 301 /social-media-marketing-platforms-elevate-strategy-with-ai-powered-solutions/ /
+Redirect 301 /boost-engagement-with-an-efficient-social-media-schedule-today/ /
+Redirect 301 /ai-social-media-tools-transform-your-social-media-management-effortlessly/ /
+Redirect 301 /best-apps-to-schedule-social-media-posts-for-effortless-management/ /
+Redirect 301 /boost-your-engagement-with-top-social-media-scheduling-programs-today/ /
+Redirect 301 /the-best-social-media-scheduler-app-to-streamline-your-content-creation/ /
+Redirect 301 /best-social-media-scheduling-app-transform-your-strategy-with-ai/ /
+Redirect 301 /books-about-social-media-marketing-essential-reads-for-success/ /
+Redirect 301 /top-social-media-marketing-agencies-in-usa-for-enhanced-brand-visibility/ /
+Redirect 301 /boost-your-strategy-with-essential-books-on-social-media-management/ /
+Redirect 301 /how-the-3h-content-strategy-transforms-social-media-management/ /
+Redirect 301 /social-media-marketing-utah-elevate-your-brand-with-ai-solutions/ /
+Redirect 301 /best-social-management-tools-to-elevate-your-social-media-strategy/ /
+Redirect 301 /best-social-media-scheduling-apps-to-boost-your-marketing-strategy/ /
+Redirect 301 /maximize-your-efficiency-with-a-social-media-scheduler-template/ /
+Redirect 301 /best-social-media-apps-to-boost-engagement-and-streamline-management/ /
+Redirect 301 /best-ai-for-social-media-elevate-your-content-creation-effortlessly/ /
+Redirect 301 /oba-framework-social-media-marketing/ /
+Redirect 301 /best-social-media-scheduling-tools-for-effortless-management-and-engagement/ /
+Redirect 301 /best-ai-social-media-post-generator-to-enhance-your-online-presence/ /
+Redirect 301 /cheap-social-media-advertising-elevate-your-brand-without-the-cost/ /
+Redirect 301 /virtusa-content-curation-interview-questions-ace-your-next-interview/ /
+Redirect 301 /maximize-engagement-effortlessly-with-ai-social-media-tools-today/ /
+Redirect 301 /ai-in-social-media-marketing-transform-content-creation-and-engage-audiences/ /
+Redirect 301 /social-media-scheduling-calendar-simplify-your-content-management/ /
+Redirect 301 /boost-your-productivity-with-social-media-scheduling-programs-today/ /
+Redirect 301 /what-is-content-strategy-for-social-media-elevate-your-brands-presence/ /
+Redirect 301 /best-social-apps-elevate-your-social-media-management-effortlessly/ /
+Redirect 301 /can-social-media-marketing-really-help-my-business-discover-the-benefits/ /
+Redirect 301 /unlocking-the-power-of-bookmarking-and-content-curation-networks-for-social-media-success/ /
+Redirect 301 /the-best-social-media-scheduling-apps-for-effortless-content-management/ /
+Redirect 301 /top-5-social-media-management-tools-for-effortless-digital-domination/ /
+Redirect 301 /how-to-become-a-social-media-manager-unlock-your-path-to-online-success/ /
+Redirect 301 /social-media-marketing-is-important-unlock-engagement-and-growth/ /
+Redirect 301 /cheapest-social-media-scheduler-boost-engagement-with-ai-power/ /
+Redirect 301 /best-content-curation-tools-to-elevate-social-media-strategies/ /
+Redirect 301 /how-to-schedule-social-media-posts-for-engaging-content-strategy/ /
+Redirect 301 /best-social-media-scheduler-for-small-business-boost-engagement-effortlessly/ /
+Redirect 301 /best-social-media-scheduler-elevate-your-brand-with-ai-powered-tools/ /
+Redirect 301 /best-social-media-scheduling-software-for-effortless-content-creation/ /
+Redirect 301 /harness-the-power-of-social-media-scheduling-tools-for-effective-marketing/ /
+Redirect 301 /content-curation-services-elevate-your-social-media-management-game/ /
+Redirect 301 /best-social-media-management-tools-elevate-your-strategy-with-ai/ /
+Redirect 301 /maximize-content-creation-and-social-media-efficiency-with-ai/ /
+Redirect 301 /social-media-marketing-for-local-businesses-elevate-your-brand-with-ai-solutions/ /
+Redirect 301 /social-media-rates-optimize-your-strategy-with-ai-powered-solutions/ /
+Redirect 301 /unlocking-your-potential-the-truth-about-social-media-management-salary/ /
+Redirect 301 /boost-your-brands-reach-with-effective-social-media-and-management-strategies/ /
+Redirect 301 /author/glowsocialcontent/ /

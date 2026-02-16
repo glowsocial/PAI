@@ -24,7 +24,7 @@ updated: 2026-01-27
 
 ### FedPro Workshop
 - **Type:** Speaking
-- **Status:** Planning
+- **Status:** Pitched (awaiting approval)
 - **Description:** "More Time for What Matters" — AI workshop for nonprofit professionals
 - **Date:** February 2026
 

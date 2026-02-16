@@ -153,6 +153,25 @@ Different AI platforms cite sources differently. Use this for client conversatio
 - **Format:** 200-400 words, one question = one answer
 - **Focus:** Direct answers to questions people ask AI
 
+### AI SITE Framework (On-Page Quick Wins)
+
+From DropinBlog research (Feb 2026): 60% of sites got more AI mentions within 1 week.
+
+| Letter | Tactic | What to Do |
+|--------|--------|------------|
+| **A** | Answer First | Put direct answer in FIRST paragraph (not under an H2) |
+| **I** | Intent-matched Headings | Use descriptive H2s, not generic "Introduction", "Step 1" |
+| **S** | Structure with Lists/Tables | Convert paragraphs to `<ul>`, `<ol>`, `<table>` |
+| **I** | Index with Schema | Add FAQPage and HowTo schema to every post |
+| **T** | Trusted Sources | Link out to authoritative sources (PubMed, .gov, studies) |
+| **E** | Entity/Framework Creation | Create named frameworks AI can cite |
+
+**Key insight:** GPT is "dumber than Google" - the more you spoon-feed structured data, the more likely it cites you. Low DR sites (DR6!) beat established brands by formatting better.
+
+**Bonus - YouTube:** Google now transcribes YouTube videos for AI Overviews. Create video versions of money articles.
+
+**Full framework:** `~/Documents/projects/content-system/methodology/ai-site-framework.md`
+
 ## Troubleshooting Decision Trees
 
 Quick diagnosis for common AI visibility problems:

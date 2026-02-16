@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "bc3e16d177419274",
+        "id": "0f2482a7da4abae8",
         "type": "tabs",
         "children": [
           {
-            "id": "b3f1649086f2e56e",
+            "id": "1e7fe4e8b3f55b60",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "youtube/shotlist-01-what-is-glow-social.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "shotlist-01-what-is-glow-social"
             }
           }
         ]
@@ -176,13 +180,36 @@
       "bases:Create new base": false
     }
   },
-  "active": "b3f1649086f2e56e",
+  "active": "1e7fe4e8b3f55b60",
   "lastOpenFiles": [
+    "youtube/elevenlabs-01-what-is-glow-social.md",
+    "youtube/script-01-what-is-glow-social.md",
+    "youtube/shotlist-01-what-is-glow-social.md",
+    "faqs/Dentist_Doing_Paperwork_Video_Generated.mp4",
+    "carouselizer-nurture-sequence.md",
+    "seo/glowsocial-htaccess-redirects.txt",
+    "seo/glowsocial-redirects.csv",
+    "seo",
+    "youtube/notebook-lm-youtube-metadata.md",
+    "faqs/09-social-media-tools-under-50.html",
+    "faqs/08-best-social-media-service-real-estate-agents.html",
+    "faqs/07-posting-frequency-local-business.html",
+    "faqs/06-ai-tools-vs-agencies-cost.html",
+    "faqs/05-best-social-media-service-auto-repair-shops.html",
+    "faqs/04-best-affordable-social-media-management.html",
+    "faq-sections-to-paste.md",
+    "youtube/assets/inactive_business_storefront_1770755827157.png",
+    "youtube/assets/active_business_storefront_1770755812784.png",
+    "youtube/00- youtube-content-plan.md",
+    "youtube/elevenlabs-03-forty-nine-dollars.md",
+    "youtube/elevenlabs-02-full-walkthrough.md",
+    "youtube/script-03-forty-nine-dollars.md",
+    "youtube/script-02-full-walkthrough.md",
+    "youtube-content-plan.md",
     "glow-social-manifesto/manifesto-v2.md",
     "product_tiers_spec.md",
     "glow-social-manifesto/manifesto-v1.md",
     "2026-networking-research.md",
-    "Glow Social one-pager.pdf",
     "glow-social-print-materials-copy.md",
     "glow-social-nurture/emails/40-the-year-from-now.md",
     "glow-social-nurture/emails/39-the-system-not-motivation.md",
@@ -191,28 +218,6 @@
     "glow-social-nurture/emails/36-the-phone-eats-first.md",
     "glow-social-nurture/emails/35-the-slow-build.md",
     "glow-social-nurture/emails/34-the-question-post.md",
-    "glow-social-nurture/emails/33-the-milestone-moment.md",
-    "glow-social-nurture/emails/32-the-employee-content.md",
-    "glow-social-nurture/emails/31-the-holiday-trap.md",
-    "glow-social-nurture/emails/30-the-expertise-you-forget.md",
-    "glow-social-nurture/emails/29-the-before-after.md",
-    "glow-social-nurture/emails/28-the-perfect-time-myth.md",
-    "glow-social-nurture/emails/27-the-local-advantage.md",
-    "glow-social-nurture/emails/26-the-repost-secret.md",
-    "glow-social-nurture/emails/25-your-regulars-forgot.md",
-    "glow-social-nurture/emails/24-the-comparison-trap.md",
-    "glow-social-nurture/emails/23-what-to-do-with-photos.md",
-    "glow-social-nurture/emails/22-they-already-follow-you.md",
-    "glow-social-nurture/emails/21-the-slow-season-trap.md",
-    "glow-social-nurture/emails/20-the-review-connection.md",
-    "glow-social-hooks-landing-page.html",
-    "glow-social-onboarding/emails",
-    "glow-social-onboarding",
-    "content_cloner.py",
-    "swipe_file/quick_tips",
-    "swipe_file/myth_vs_fact",
-    "swipe_file/community_questions",
-    "swipe_file",
-    "glow-social-homepage/homepage-v2.html"
+    "glow-social-nurture/emails/33-the-milestone-moment.md"
   ]
 }
