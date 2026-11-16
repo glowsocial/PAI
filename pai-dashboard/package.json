@@ -15,7 +15,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
+    "postcss": "8.5.23",
     "tailwindcss": "^4.1.15"
   },
   "peerDependencies": {
@@ -28,10 +28,13 @@
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.546.0",
-    "next": "^15.5.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "next": "15.5.28",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-markdown": "^9.0.1",
     "tailwind-merge": "^3.3.1"
+  },
+  "overrides": {
+    "postcss": "8.5.23"
   }
 }

@@ -14,6 +14,11 @@ function getIdentityDir(): string {
     return path.join(process.cwd(), "data", "identity")
 }
 
+function updatedText(value: unknown): string {
+    if (value instanceof Date) return value.toISOString().slice(0, 10)
+    return typeof value === "string" && value ? value : "Unknown"
+}
+
 export function getIdentitySections(): IdentitySection[] {
     const identityDir = getIdentityDir()
 
@@ -35,7 +40,7 @@ export function getIdentitySections(): IdentitySection[] {
             id: file.replace(".md", ""),
             title: data.title || file.replace(".md", ""),
             content: body,
-            updated: data.updated || "Unknown",
+            updated: updatedText(data.updated),
             path: filePath,
         })
     }
@@ -67,7 +72,7 @@ export function getIdentitySection(id: string): IdentitySection | null {
         id,
         title: data.title || id,
         content: body,
-        updated: data.updated || "Unknown",
+        updated: updatedText(data.updated),
         path: filePath,
     }
 }
